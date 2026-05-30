@@ -10,8 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&family=Prompt:wght@300;400;500;600;700&family=Kanit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="image/isc logo.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="assets/images/isc logo.png">
 </head>
 <body>
     <!-- Navigation -->
@@ -19,11 +19,11 @@
         <div class="nav-container">
             <a href="index.html" class="nav-logo">
                 <div class="logo-school">
-                    <img src="image/images-removebg-preview (1).png" alt="โลโก้โรงเรียนบ้านไผ่">
+                    <img src="assets/images/images-removebg-preview (1).png" alt="โลโก้โรงเรียนบ้านไผ่">
                 </div>
                 <div class="logo-divider"></div>
                 <div class="logo-icon">
-                    <img src="image/isc logo.png" alt="โลโก้สายการเรียน">
+                    <img src="assets/images/isc logo.png" alt="โลโก้สายการเรียน">
                 </div>
                 <div class="logo-text">
                     <span class="logo-main">ISC Intensive Science Computer</span>
@@ -41,15 +41,15 @@
                     <li class="nav-dropdown">
                         <a href="#about" class="nav-link">เกี่ยวกับแผนการเรียน <i class="fas fa-chevron-down nav-arrow"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="m4.html"><i class="fas fa-graduation-cap"></i> มัธยมศึกษาปีที่ 4</a></li>
                             <li><a href="teachers.html"><i class="fas fa-chalkboard-teacher"></i> คณะครู</a></li>
                             <li><a href="#about"><i class="fas fa-star"></i> ภาพรวมแผนการเรียน</a></li>
                             <li><a href="#curriculum"><i class="fas fa-book"></i> หลักสูตรทั้งหมด</a></li>
                         </ul>
                     </li>
-                    <li><a href="#curriculum" class="nav-link">หลักสูตร <i class="fas fa-chevron-down nav-arrow"></i></a></li>
-                    <li><a href="#activities" class="nav-link">กิจกรรม <i class="fas fa-chevron-down nav-arrow"></i></a></li>
+                    <li><a href="#curriculum" class="nav-link">หลักสูตร</a></li>
+                    <li><a href="#activities" class="nav-link">กิจกรรม</a></li>
                     <li><a href="teachers.html" class="nav-link">คณะครู</a></li>
+                    <li><a href="developer.html" class="nav-link">ผู้พัฒนา</a></li>
                     <li><a href="#contact" class="nav-link">ติดต่อ</a></li>
                 </ul>
                 <a href="#apply" class="nav-cta">สมัครเรียน</a>
@@ -261,16 +261,16 @@
                 </div>
                 <div class="about-image slideshow-container">
                     <div class="slideshow-fade">
-                        <img src="slide image/slide1.jpg" alt="กิจกรรมกลุ่ม">
+                        <img src="assets/images/slide1.jpg" alt="กิจกรรมกลุ่ม">
                     </div>
                     <div class="slideshow-fade">
-                        <img src="slide image/slide2.jpg" alt="การเรียนรู้เทคโนโลยี">
+                        <img src="assets/images/slide2.jpg" alt="การเรียนรู้เทคโนโลยี">
                     </div>
                     <div class="slideshow-fade">
-                        <img src="slide image/slide3.jpg" alt="การแข่งขัน">
+                        <img src="assets/images/slide3.jpg" alt="การแข่งขัน">
                     </div>
                     <div class="slideshow-fade">
-                        <img src="slide image/slide4.jpg" alt="ชมรมหุ่นยนต์">
+                        <img src="assets/images/slide4.jpg" alt="ชมรมหุ่นยนต์">
                     </div>
                     <!-- ตัวบ่งชี้ (optional) -->
                     <div class="slideshow-dots">
@@ -290,77 +290,58 @@
                 <h2 class="section-title">รายวิชา<span class="highlight">ที่เปิดสอน</span></h2>
             </div>
             
-            <div class="curriculum-tabs">
-                <button class="tab-btn active" data-tab="year1">ม.4</button>
-                <button class="tab-btn" data-tab="year2">ม.5</button>
-                <button class="tab-btn" data-tab="year3">ม.6</button>
-            </div>
-            
-            <div class="tab-content active" id="year1">
-                <div class="subjects-grid">
-                    <div class="subject-card">
-                        <div class="subject-icon"><i class="fab fa-python"></i></div>
-                        <h4>พื้นฐานการเขียนโปรแกรม</h4>
-                        <p>Python Programming</p>
-                        <span class="subject-hours">2 ชม./สัปดาห์</span>
-                    </div>
-                    <div class="subject-card">
-                        <div class="subject-icon"><i class="fas fa-sitemap"></i></div>
-                        <h4>โครงสร้างข้อมูล</h4>
-                        <p>Data Structures</p>
-                        <span class="subject-hours">2 ชม./สัปดาห์</span>
-                    </div>
-                    <div class="subject-card">
-                        <div class="subject-icon"><i class="fas fa-database"></i></div>
-                        <h4>ระบบฐานข้อมูล</h4>
-                        <p>Database Systems</p>
-                        <span class="subject-hours">2 ชม./สัปดาห์</span>
+            <div class="curriculum-all">
+                <div class="curriculum-level">
+                    <h3 class="curriculum-level-title">มัธยมศึกษาปีที่ 4</h3>
+                    <div class="subjects-grid">
+                        <div class="subject-card">
+                            <div class="subject-icon"><i class="fab fa-c"></i></div>
+                            <h4>พื้นฐานการเขียนโปรแกรม</h4>
+                            <p>C Programming</p>
+                            <span class="subject-hours">3 ชม./สัปดาห์</span>
+                        </div>
+                        <div class="subject-card">
+                            <div class="subject-icon"><i class="fas fa-robot"></i></div>
+                            <h4>การประกอบหุ่นยนต์</h4>
+                            <p>Robotics</p>
+                            <span class="subject-hours">3 ชม./สัปดาห์</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="tab-content" id="year2">
-                <div class="subjects-grid">
-                    <div class="subject-card">
-                        <div class="subject-icon"><i class="fa-solid fa-gamepad"></i></div>
-                        <h4>การออกแบบเกมด้วยโปรแกรม Construct 2</h4>
-                        <p>Design Games with Construct 2</p>
-                        <span class="subject-hours">3 ชม./สัปดาห์</span>
-                    </div>
-                    <div class="subject-card">
-                        <div class="subject-icon"><i class="fas fa-globe"></i></div>
-                        <h4>การพัฒนาเว็บแอปพลิเคชัน</h4>
-                        <p>Web Development</p>
-                        <span class="subject-hours">2 ชม./สัปดาห์</span>
-                    </div>
-                    <div class="subject-card">
-                        <div class="subject-icon"><i class="fas fa-brain"></i></div>
-                        <h4>ปัญญาประดิษฐ์เบื้องต้น</h4>
-                        <p>Introduction to AI</p>
-                        <span class="subject-hours">2 ชม./สัปดาห์</span>
+
+                <div class="curriculum-level">
+                    <h3 class="curriculum-level-title">มัธยมศึกษาปีที่ 5</h3>
+                    <div class="subjects-grid">
+                        <div class="subject-card">
+                            <div class="subject-icon"><i class="fa-solid fa-gamepad"></i></div>
+                            <h4>การออกแบบเกมด้วยโปรแกรม Construct 2</h4>
+                            <p>Design Games with Construct 2</p>
+                            <span class="subject-hours">3 ชม./สัปดาห์</span>
+                        </div>
+                        <div class="subject-card">
+                            <div class="subject-icon"><i class="fas fa-palette"></i></div>
+                            <h4>การออกแบบ Graphic</h4>
+                            <p>Graphic Design</p>
+                            <span class="subject-hours">3 ชม./สัปดาห์</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="tab-content" id="year3">
-                <div class="subjects-grid">
-                    <div class="subject-card">
-                        <div class="subject-icon"><i class="fas fa-project-diagram"></i></div>
-                        <h4>โครงงานวิทยาศาสตร์</h4>
-                        <p>Senior Project</p>
-                        <span class="subject-hours">4 ชม./สัปดาห์</span>
-                    </div>
-                    <div class="subject-card">
-                        <div class="subject-icon"><i class="fas fa-shield-alt"></i></div>
-                        <h4>ความมั่นคงไซเบอร์</h4>
-                        <p>Cybersecurity</p>
-                        <span class="subject-hours">2 ชม./สัปดาห์</span>
-                    </div>
-                    <div class="subject-card">
-                        <div class="subject-icon"><i class="fas fa-briefcase"></i></div>
-                        <h4>การฝึกงาน</h4>
-                        <p>Internship</p>
-                        <span class="subject-hours">ตลอดภาคเรียน</span>
+
+                <div class="curriculum-level">
+                    <h3 class="curriculum-level-title">มัธยมศึกษาปีที่ 6</h3>
+                    <div class="subjects-grid">
+                        <div class="subject-card">
+                            <div class="subject-icon"><i class="fas fa-project-diagram"></i></div>
+                            <h4>การออกแบบ Website</h4>
+                            <p>Website Design</p>
+                            <span class="subject-hours">3 ชม./สัปดาห์</span>
+                        </div>
+                        <div class="subject-card">
+                            <div class="subject-icon"><i class="fas fa-palette"></i></div>
+                            <h4>การออกแบบ Graphic</h4>
+                            <p>Graphic Design</p>
+                            <span class="subject-hours">3 ชม./สัปดาห์</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -371,14 +352,14 @@
     <section id="activities" class="section activities">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">กิจกรรม</span>
-                <h2 class="section-title">กิจกรรม<span class="highlight">ที่น่าสนใจ</span></h2>
+                <span class="section-tag">การแข่งขัน</span>
+                <h2 class="section-title">การ<span class="highlight">แข่งขัน</span></h2>
             </div>
             
             <div class="activities-grid">
                 <a href="https://www.facebook.com/share/p/1CTG7P3BN4/" target="_blank" class="activity-block" data-activity="gamejam">
                     <div class="activity-image">
-                        <img src="image/activity1.jpg" alt="การแข่งขัน Arduino">
+                        <img src="assets/images/activity1.jpg" alt="การแข่งขัน Arduino">
                         <div class="activity-overlay"></div>
                     </div>
                     <div class="activity-static">
@@ -400,7 +381,7 @@
                 
                 <a href="https://www.facebook.com/share/p/1CTG7P3BN4/" target="_blank" class="activity-block" data-activity="robot">
                     <div class="activity-image">
-                        <img src="image/activity2.jpg" alt="แข่งขันโครงงานหุ่นยนต์ทำมือ">
+                        <img src="assets/images/activity2.jpg" alt="แข่งขันโครงงานหุ่นยนต์ทำมือ">
                         <div class="activity-overlay"></div>
                     </div>
                     <div class="activity-static">
@@ -422,7 +403,7 @@
                 
                 <a href="https://www.facebook.com/share/p/1Cbt4JyqsA/" target="_blank" class="activity-block" data-activity="alumni">
                     <div class="activity-image">
-                        <img src="slide image/slide1.jpg" alt="PNS Robotics Competition">
+                        <img src="assets/images/slide1.jpg" alt="PNS Robotics Competition">
                         <div class="activity-overlay"></div>
                     </div>
                     <div class="activity-static">
@@ -449,24 +430,36 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">คณะครู</span>
-                <h2 class="section-title">ทีม<span class="highlight">ผู้สอน</span></h2>
+                <h2 class="section-title">คณะครู<span class="highlight">ผู้สอน</span></h2>
+            </div>
+
+            <div class="leadership-section-intro">
+                <h3>หัวหน้าแผนการเรียน</h3>
+                <p>คุณครูหัวหน้าแผนการเรียนวิทยาศาสตร์คอมพิวเตอร์</p>
+            </div>
+
+            <div class="leadership-grid">
+                <div class="teacher-card featured">
+                    <div class="teacher-avatar">
+                        <img src="assets/images/นพรัตน์-กรังสูงเนิน.jpg" alt="คุณครูนพรัตน์">
+                    </div>
+                    <div class="teacher-info">
+                        <h4>คุณครูนพรัตน์ กรังสูงเนิน</h4>
+                        <p class="teacher-role">หัวหน้าแผนการเรียนวิทยาศาสตร์คอมพิวเตอร์</p>
+                        <p class="teacher-subject">Robotics / C Programming</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="leadership-section-intro" style="margin-top: 3rem;">
+                <h3>คณะครูผู้สอน</h3>
+                <p>คณะครูผู้สอนในแต่ละรายวิชา</p>
             </div>
             
             <div class="teachers-grid">
                 <div class="teacher-card">
                     <div class="teacher-avatar">
-                        <img src="image/Kru Aoom.jpg" alt="ครูอุ้ม">
-                    </div>
-                    <div class="teacher-info">
-                        <h4>คุณครูสมปรารถนา จันทร์ประถัด</h4>
-                        <p class="teacher-role">หัวหน้าแผนการเรียนวิทยาศาสตร์คอมพิวเตอร์</p>
-                        <p class="teacher-subject">Robotics / C Programming</p>
-                    </div>
-                </div>
-                
-                <div class="teacher-card">
-                    <div class="teacher-avatar">
-                        <img src="image/ชนัญนิช-ถาวรยุติการต์.jpg" alt="ครูนิด">
+                        <img src="assets/images/ชนัญนิช-ถาวรยุติการต์.jpg" alt="คุณครูชนัญนิช">
                     </div>
                     <div class="teacher-info">
                         <h4>คุณครูชนัญนิช ถาวรยุติการต์</h4>
@@ -477,10 +470,54 @@
                 
                 <div class="teacher-card">
                     <div class="teacher-avatar">
-                        <img src="image/นวพล-สีดามล.jpg" alt="ครูนวพล">
+                        <img src="assets/images/นวพล-สีดามล.jpg" alt="คุณครูนวพล">
                     </div>
                     <div class="teacher-info">
                         <h4>คุณครูนวพล สีดามล</h4>
+                        <p class="teacher-role">คุณครูประจำรายวิชาวิทยาศาสตร์และเทคโนโลยี</p>
+                        <p class="teacher-subject">วิทยาการคำนวณ / Programming</p>
+                    </div>
+                </div>
+                
+                <div class="teacher-card">
+                    <div class="teacher-avatar">
+                        <img src="assets/images/Kru Aoom.jpg" alt="คุณครูสมปารถนา">
+                    </div>
+                    <div class="teacher-info">
+                        <h4>คุณครูสมปารถนา จันทร์ประทัด</h4>
+                        <p class="teacher-role">คุณครูประจำรายวิชาวิทยาศาสตร์และเทคโนโลยี</p>
+                        <p class="teacher-subject">Robotics / C Programming</p>
+                    </div>
+                </div>
+                
+                <div class="teacher-card">
+                    <div class="teacher-avatar">
+                        <img src="assets/images/วัชราภรณ์-ชาวงษ์.jpg" alt="คุณครูวัชราภรณ์">
+                    </div>
+                    <div class="teacher-info">
+                        <h4>คุณครูวัชราภรณ์ ชาวงษ์</h4>
+                        <p class="teacher-role">คุณครูประจำรายวิชาวิทยาศาสตร์และเทคโนโลยี</p>
+                        <p class="teacher-subject">3D Modeling / วิทยาการคำนวณ</p>
+                    </div>
+                </div>
+                
+                <div class="teacher-card">
+                    <div class="teacher-avatar">
+                        <img src="assets/images/ธนพร-นาตรีชน.jpg" alt="คุณครูธนพร">
+                    </div>
+                    <div class="teacher-info">
+                        <h4>คุณครูธนพร นาตรีชน</h4>
+                        <p class="teacher-role">คุณครูประจำรายวิชาวิทยาศาสตร์และเทคโนโลยี</p>
+                        <p class="teacher-subject">Website Development / Graphic Design</p>
+                    </div>
+                </div>
+                
+                <div class="teacher-card">
+                    <div class="teacher-avatar">
+                        <img src="assets/images/สุวพรรณ-พรหมรับ.jpg" alt="คุณครูสุวพรรณ">
+                    </div>
+                    <div class="teacher-info">
+                        <h4>คุณครูสุวพรรณ พรหมรับ</h4>
                         <p class="teacher-role">คุณครูประจำรายวิชาวิทยาศาสตร์และเทคโนโลยี</p>
                         <p class="teacher-subject">วิทยาการคำนวณ</p>
                     </div>
@@ -488,67 +525,12 @@
                 
                 <div class="teacher-card">
                     <div class="teacher-avatar">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300" alt="อาจารย์กานต์">
+                        <img src="assets/images/สัณห์สินี-พิมพ์ภักดี.jpg" alt="คุณครูสัณห์สินี">
                     </div>
                     <div class="teacher-info">
-                        <h4>อาจารย์กานต์ การดี</h4>
-                        <p class="teacher-role">ครูผู้สอน</p>
-                        <p class="teacher-subject">Programming & Algorithm</p>
-                    </div>
-                </div>
-                
-                <div class="teacher-card">
-                    <div class="teacher-avatar">
-                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=300" alt="อาจารย์ประเสริฐ">
-                    </div>
-                    <div class="teacher-info">
-                        <h4>อาจารย์ประเสริฐ เก่งกาจ</h4>
-                        <p class="teacher-role">ครูผู้สอน</p>
-                        <p class="teacher-subject">Data Science</p>
-                    </div>
-                </div>
-                
-                <div class="teacher-card">
-                    <div class="teacher-avatar">
-                        <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=300" alt="อาจารย์สุดา">
-                    </div>
-                    <div class="teacher-info">
-                        <h4>อาจารย์สุดา รัตน์</h4>
-                        <p class="teacher-role">ครูผู้สอน</p>
-                        <p class="teacher-subject">Mobile App Development</p>
-                    </div>
-                </div>
-                
-                <div class="teacher-card">
-                    <div class="teacher-avatar">
-                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300" alt="อาจารย์มานพ">
-                    </div>
-                    <div class="teacher-info">
-                        <h4>อาจารย์มานพ ชาญชัย</h4>
-                        <p class="teacher-role">ครูผู้สอน</p>
-                        <p class="teacher-subject">Software Engineering</p>
-                    </div>
-                </div>
-                
-                <div class="teacher-card">
-                    <div class="teacher-avatar">
-                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300" alt="อาจารย์พรทิพย์">
-                    </div>
-                    <div class="teacher-info">
-                        <h4>อาจารย์พรทิพย์ วงศ์</h4>
-                        <p class="teacher-role">ครูผู้สอน</p>
-                        <p class="teacher-subject">Computer Graphics</p>
-                    </div>
-                </div>
-                
-                <div class="teacher-card">
-                    <div class="teacher-avatar">
-                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300" alt="อาจารย์วิชัย">
-                    </div>
-                    <div class="teacher-info">
-                        <h4>อาจารย์วิชัย ศรีสุข</h4>
-                        <p class="teacher-role">ครูผู้สอน</p>
-                        <p class="teacher-subject">Cloud Computing</p>
+                        <h4>คุณครูสัณห์สินี พิมพ์ภักดี</h4>
+                        <p class="teacher-role">คุณครูประจำรายวิชาวิทยาศาสตร์และเทคโนโลยี</p>
+                        <p class="teacher-subject">วิทยาการคำนวณ</p>
                     </div>
                 </div>
             </div>
@@ -568,7 +550,7 @@
             <div class="contact-wrapper">
                 <div class="contact-info">
                     <span class="section-tag">ติดต่อเรา</span>
-                    <h2>มาเรียนรู้<br><span class="highlight">ไปด้วยกัน</span></h2>
+                    <h2>สามารถ<br><span class="highlight">ติดต่อเราได้ที่</span></h2>
                     <p>สนใจสมัครเรียนหรือต้องการข้อมูลเพิ่มเติม</p>
                     
                     <div class="contact-details">
@@ -576,54 +558,25 @@
                             <i class="fas fa-map-marker-alt"></i>
                             <div>
                                 <h4>ที่อยู่</h4>
-                                <p>เลขที่ 999 หมู่ 13 ตำบลบ้านไผ่ อำเภอบ้านไผ่ จังหวัดขอนแก่น 40110</p>
+                                <p>เลขที่ 851 ม.1 ถนนเจนจบทิศ ต.ในเมือง อ.บ้านไผ่ จ.ขอนแก่น 40110</p>
                             </div>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-phone"></i>
                             <div>
                                 <h4>โทรศัพท์</h4>
-                                <p>043-238-000</p>
+                                <p>043-273-623</p>
                             </div>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
                             <div>
                                 <h4>อีเมล</h4>
-                                <p>skkbanphai@kku.ac.th</p>
+                                <p>bpschool@banphai.ac.th</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="contact-form-wrapper">
-                    <form class="contact-form" id="contactForm">
-                        <div class="form-group">
-                            <input type="text" id="name" placeholder="ชื่อ-นามสกุล" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" placeholder="อีเมล" required>
-                        </div>
-                        <div class="form-group">
-                            <select id="subject" required>
-                                <option value="">เลือกหัวข้อ</option>
-                                <option value="admission">สอบถามการรับสมัคร</option>
-                                <option value="curriculum">สอบถามหลักสูตร</option>
-                                <option value="other">อื่นๆ</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" rows="4" placeholder="ข้อความ" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-full">
-                            <span>ส่งข้อความ</span>
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -631,23 +584,24 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <div class="logo-icon" style="width: 50px; height: 50px;">
-                        <i class="fas fa-laptop-code"></i>
+                        <img src="assets/images/isc logo.png" alt="โลโก้สายการเรียน">
                     </div>
                     <div>
-                        <span>ICS BANPHAI</span>
-                        <p>โรงเรียนสาธิตมหาวิทยาลัยขอนแก่น ฝ่ายมัธยมศึกษา (บ้านไผ่)</p>
+                        <span>ISC Intensive Science Computer | โรงเรียนบ้านไผ่</span>
+                        <p>โรงเรียนบ้านไผ่ จังหวัดขอนแก่น รหัสไปรษณีย์ 40110</p>
                     </div>
                 </div>
                 <div class="footer-links">
-                    <a href="#about">เกี่ยวกับเรา</a>
+                    <a href="#about">เกี่ยวกับแผนการเรียน</a>
                     <a href="#curriculum">หลักสูตร</a>
                     <a href="#activities">กิจกรรม</a>
                     <a href="teachers.html">คณะครู</a>
+                    <a href="developer.html">ผู้พัฒนา</a>
                     <a href="#contact">ติดต่อ</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 โรงเรียนสาธิตมหาวิทยาลัยขอนแก่น ฝ่ายมัธยมศึกษา (บ้านไผ่)</p>
+                <p>&copy; 2026 by Narongrit Sittisuonjit ISC</p>
             </div>
         </div>
     </footer>
@@ -656,6 +610,6 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
