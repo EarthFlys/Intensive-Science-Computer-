@@ -144,67 +144,72 @@ backToTop.addEventListener('click', () => {
 // ==========================================
 const particlesContainer = document.getElementById('particles');
 
-function createParticle() {
-    const particle = document.createElement('div');
-    particle.className = 'particle';
-    particle.style.left = Math.random() * 100 + '%';
-    particle.style.animationDuration = (Math.random() * 10 + 5) + 's';
-    particle.style.animationDelay = Math.random() * 5 + 's';
-    particlesContainer.appendChild(particle);
+if (particlesContainer) {
+    function createParticle() {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDuration = (Math.random() * 10 + 5) + 's';
+        particle.style.animationDelay = Math.random() * 5 + 's';
+        particlesContainer.appendChild(particle);
 
-    setTimeout(() => {
-        if (particle.parentNode) {
-            particle.remove();
-        }
-    }, 15000);
-}
+        setTimeout(() => {
+            if (particle.parentNode) {
+                particle.remove();
+            }
+        }, 15000);
+    }
 
-for (let i = 0; i < 50; i++) {
-    setTimeout(createParticle, i * 100);
+    for (let i = 0; i < 50; i++) {
+        setTimeout(createParticle, i * 100);
+    }
+    setInterval(createParticle, 300);
 }
-setInterval(createParticle, 300);
 
 // ==========================================
 // Typing Effect
 // ==========================================
 const typingText = document.getElementById('typingText');
-const phrases = [
-    'Python Programming...',
-    'Web Development...',
-    'Graphics Design...',
-    'Algorithm...',
-    'Robotics...',
-];
-let phraseIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-let typingSpeed = 100;
 
-function typeEffect() {
-    const currentPhrase = phrases[phraseIndex];
+if (typingText) {
+    const phrases = [
+        'Python Programming...',
+        'Web Development...',
+        'Graphics Design...',
+        'Algorithm...',
+        'Robotics...',
+    ];
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typingSpeed = 100;
 
-    if (isDeleting) {
-        typingText.textContent = currentPhrase.substring(0, charIndex - 1);
-        charIndex--;
-        typingSpeed = 50;
-    } else {
-        typingText.textContent = currentPhrase.substring(0, charIndex + 1);
-        charIndex++;
-        typingSpeed = 100;
+    function typeEffect() {
+        const currentPhrase = phrases[phraseIndex];
+
+        if (isDeleting) {
+            typingText.textContent = currentPhrase.substring(0, charIndex - 1);
+            charIndex--;
+            typingSpeed = 50;
+        } else {
+            typingText.textContent = currentPhrase.substring(0, charIndex + 1);
+            charIndex++;
+            typingSpeed = 100;
+        }
+
+        if (!isDeleting && charIndex === currentPhrase.length) {
+            isDeleting = true;
+            typingSpeed = 2000;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            phraseIndex = (phraseIndex + 1) % phrases.length;
+            typingSpeed = 500;
+        }
+
+        setTimeout(typeEffect, typingSpeed);
     }
-
-    if (!isDeleting && charIndex === currentPhrase.length) {
-        isDeleting = true;
-        typingSpeed = 2000;
-    } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        phraseIndex = (phraseIndex + 1) % phrases.length;
-        typingSpeed = 500;
-    }
-
-    setTimeout(typeEffect, typingSpeed);
+    typeEffect();
 }
-typeEffect();
 
 // ==========================================
 // Curriculum Tabs
@@ -410,6 +415,11 @@ const cardObserver = new IntersectionObserver((entries) => {
         }
     });
 }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+
+// alumni-card แสดงทันที ไม่ผ่าน observer
+document.querySelectorAll('.alumni-card').forEach(card => {
+    card.classList.add('visible');
+});
 
 sections.forEach(section => sectionObserver.observe(section));
 cards.forEach(card => cardObserver.observe(card));

@@ -1230,6 +1230,14 @@ a {
     transform: translateY(0);
 }
 
+/* หน้า alumni ไม่ใช้ scroll-reveal เพราะ section ใหญ่เกินไป */
+.alumni-section,
+.alumni-stats-section,
+.universities-section {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;

@@ -1,0 +1,555 @@
+/* ===== Alumni Page Styles ===== */
+
+
+.alumni-hero {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    padding: 8rem 1.5rem 4rem;
+    background: linear-gradient(135deg, var(--bg-deep) 0%, var(--bg-dark) 50%, var(--primary-dark) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.alumni-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4a574' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.5;
+}
+
+.alumni-hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.alumni-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 1.5rem;
+    background: rgba(212, 165, 116, 0.15);
+    border: 1px solid var(--secondary);
+    border-radius: 50px;
+    font-size: 1rem;
+    color: var(--secondary);
+    margin-bottom: 1.5rem;
+}
+
+.alumni-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.alumni-title span {
+    color: var(--secondary);
+    text-shadow: 0 0 30px rgba(212, 165, 116, 0.5);
+}
+
+.alumni-subtitle {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    line-height: 1.8;
+}
+
+.alumni-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.alumni-stat {
+    text-align: center;
+}
+
+.alumni-stat-num {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--secondary);
+}
+
+.alumni-stat-label {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    padding: 1rem 1.5rem;
+    background: var(--bg-alt);
+}
+
+.breadcrumb-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.breadcrumb-content a {
+    color: var(--primary-light);
+    transition: color 0.3s ease;
+}
+
+.breadcrumb-content a:hover {
+    color: var(--secondary);
+}
+
+/* Alumni Grid */
+.alumni-section {
+    background: var(--bg-section-alt);
+}
+
+.alumni-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Card: รูปอยู่บน ข้อมูลอยู่ล่าง */
+.alumni-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.4s var(--ease);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    /* รูป บน | info ล่าง */
+    align-items: stretch;
+}
+
+.alumni-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--secondary);
+    box-shadow: 0 16px 45px rgba(0, 0, 0, 0.35), 0 0 25px rgba(212, 165, 116, 0.15);
+}
+
+/* ===== ส่วนรูป (บน) ===== */
+.alumni-image {
+    width: 100%;
+    padding-top: 125%; /* 4:5 aspect ratio */
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    order: 1;
+    /* รูปอยู่บน */
+}
+
+.alumni-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.5s ease;
+    opacity: 0.92;
+    display: block;
+}
+
+.alumni-card:hover .alumni-image img {
+    transform: scale(1.08);
+    opacity: 1;
+}
+
+/* Badge บน corner รูป */
+.alumni-image .alumni-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    background: linear-gradient(135deg, var(--secondary), var(--primary));
+    color: var(--primary-dark);
+    padding: 0.3rem 0.65rem;
+    border-radius: 20px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    z-index: 2;
+}
+
+/* เส้น gradient ล่างรูป */
+.alumni-image::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background: linear-gradient(to top, var(--bg-card), transparent);
+    pointer-events: none;
+}
+
+/* ===== ส่วนข้อมูล (ล่าง) ===== */
+.alumni-info {
+    padding: 1.5rem;
+    flex-grow: 1;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    order: 2;
+    /* info อยู่ล่าง */
+    border-top: 1px solid var(--border);
+}
+
+/* เลขลำดับ */
+.alumni-number {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: rgba(212, 165, 116, 0.5);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.alumni-info h4 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-white);
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.alumni-university {
+    color: var(--secondary);
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+}
+
+.alumni-major {
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.alumni-details {
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.6rem;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.detail-tag {
+    background: rgba(212, 165, 116, 0.15);
+    color: var(--secondary);
+    padding: 0.28rem 0.65rem;
+    border-radius: 10px;
+    font-size: 0.68rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.detail-year {
+    background: rgba(0, 61, 107, 0.25);
+    color: var(--primary-light);
+    padding: 0.28rem 0.65rem;
+    border-radius: 10px;
+    font-size: 0.68rem;
+    font-weight: 600;
+}
+
+.alumni-note {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-style: italic;
+    margin-top: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.alumni-note::before {
+    content: '★';
+    color: var(--secondary);
+    font-style: normal;
+    font-size: 0.7rem;
+}
+
+/* Alumni Stats Section */
+.alumni-stats-section {
+    background: var(--bg-deep);
+    padding: 4rem 1.5rem;
+}
+
+.alumni-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.stat-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.4s var(--ease);
+    backdrop-filter: blur(10px);
+}
+
+.stat-box:hover {
+    border-color: var(--secondary);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--secondary);
+    margin: 0 auto 1rem;
+}
+
+.stat-content h4 {
+    font-size: 2rem;
+    color: var(--secondary);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.stat-content p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Universities Section */
+.universities-section {
+    background: var(--bg-section-alt);
+    padding: 4rem 1.5rem;
+}
+
+.universities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.university-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.4s var(--ease);
+    position: relative;
+    overflow: hidden;
+}
+
+.university-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+}
+
+.university-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--secondary);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.university-card i {
+    font-size: 2.5rem;
+    color: var(--secondary);
+    margin-bottom: 1rem;
+}
+
+.university-card h4 {
+    color: var(--text-white);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.university-card p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .alumni-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .universities-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .alumni-title {
+        font-size: 2.5rem;
+    }
+
+    .alumni-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .alumni-stats {
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .alumni-hero {
+        padding: 6rem 1rem 3rem;
+        min-height: 50vh;
+    }
+
+    /* Card บนมือถือ: รูปบน ข้อมูลล่าง */
+    .alumni-card {
+        flex-direction: column;
+        align-items: stretch;
+        min-height: 0;
+    }
+
+    .alumni-image {
+        width: 100%;
+        padding-top: 125%;
+        flex-shrink: 0;
+        order: 1;
+    }
+
+    .alumni-image img {
+        object-position: top center;
+    }
+
+    .alumni-info {
+        padding: 1rem 1.2rem;
+        text-align: left;
+        order: 2;
+        border-top: 1px solid var(--border);
+        justify-content: center;
+    }
+
+    .alumni-number {
+        font-size: 0.65rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .alumni-info h4 {
+        font-size: 0.95rem;
+        margin-bottom: 0.35rem;
+    }
+
+    .alumni-university {
+        font-size: 0.8rem;
+        margin-bottom: 0.25rem;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .alumni-major {
+        font-size: 0.75rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .alumni-details {
+        justify-content: flex-start;
+        gap: 0.4rem;
+        margin-bottom: 0.5rem;
+        flex-wrap: wrap;
+    }
+
+    .detail-tag,
+    .detail-year {
+        font-size: 0.6rem;
+        padding: 0.2rem 0.5rem;
+    }
+
+    .alumni-note {
+        font-size: 0.72rem;
+        justify-content: flex-start;
+    }
+
+    /* Badge บนรูปเล็กลง */
+    .alumni-image .alumni-badge {
+        font-size: 0.55rem;
+        padding: 0.2rem 0.45rem;
+        top: 6px;
+        right: 6px;
+    }
+
+    .alumni-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .universities-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .alumni-title {
+        font-size: 2rem;
+    }
+
+    .alumni-subtitle {
+        font-size: 1rem;
+    }
+
+    .alumni-stats {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .breadcrumb-content {
+        flex-wrap: wrap;
+        gap: 0.25rem;
+    }
+
+    .alumni-grid {
+        gap: 1rem;
+        padding: 0 0.25rem;
+    }
+}
+
+.alumni-card,
+.alumni-card.visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
